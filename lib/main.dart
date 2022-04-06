@@ -473,6 +473,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 40),
               )),
           Container(
+            padding: EdgeInsets.only(bottom: 25),
             child: Column(
               children: [
                 Container(

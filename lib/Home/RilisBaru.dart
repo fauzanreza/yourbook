@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourbook/Feature/detail.dart';
 
 class RilisPage extends StatelessWidget {
   const RilisPage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class RilisPage extends StatelessWidget {
             Container(
               child: Row(children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(left: 45, top: 25),
+                  margin: EdgeInsets.only(left: 30, top: 25),
                   child: Text("Baru Upload :",
                       style: TextStyle(
                         fontSize: 16,
@@ -25,17 +26,28 @@ class RilisPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 20),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book3.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book3.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -57,13 +69,24 @@ class RilisPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book2.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book2.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -88,17 +111,28 @@ class RilisPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 20),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book1.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book1.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -120,13 +154,24 @@ class RilisPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book3.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book3.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -151,17 +196,28 @@ class RilisPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 20),
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book2.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book2.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -183,13 +239,24 @@ class RilisPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book1.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book1.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(

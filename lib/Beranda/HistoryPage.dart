@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourbook/Feature/detail.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({Key? key}) : super(key: key);
@@ -47,13 +48,24 @@ class HistoryPage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book3.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book3.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -75,13 +87,24 @@ class HistoryPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book2.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book2.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -110,13 +133,24 @@ class HistoryPage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book1.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book1.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -138,13 +172,24 @@ class HistoryPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book3.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book3.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -173,13 +218,24 @@ class HistoryPage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book2.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book2.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(
@@ -201,13 +257,24 @@ class HistoryPage extends StatelessWidget {
                     ),
                     Container(
                       width: 172,
-                      height: 250,
+                      height: 260,
                       child: Card(
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
-                          Image(
-                            image: AssetImage("assets/book1.png"),
-                            height: 170,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const detail()),
+                              );
+                            },
+                            child: Ink.image(
+                              image: AssetImage("assets/book1.png"),
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.fill,
+                            ),
                           ),
                           ListTile(
                             title: const Text(

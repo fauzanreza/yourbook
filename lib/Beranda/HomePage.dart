@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+import 'package:yourbook/Feature/chat.dart';
+import 'package:yourbook/Feature/notif.dart';
 import 'package:yourbook/Home/ExplorePage.dart';
 import 'package:yourbook/Home/NearPage.dart';
 import 'package:yourbook/Home/RilisBaru.dart';
@@ -43,7 +45,13 @@ class _HomePageState extends State<HomePage> {
                                 Icons.chat_rounded,
                                 color: Colors.blue,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Chat()),
+                                );
+                              },
                             )),
                         SafeArea(
                             top: true,
@@ -52,7 +60,13 @@ class _HomePageState extends State<HomePage> {
                                 Icons.notifications_none_rounded,
                                 color: Colors.blue,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Notif()),
+                                );
+                              },
                             )),
                       ]) // set your search bar setting
                 ],

@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   tab_indicator_styler: ^2.0.0
+  sqflite: ^2.0.0+3
+  path: ^1.8.0
+  google_maps_flutter: ^2.1.6
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,9 @@ flutter:
     - assets/book1.png
     - assets/book2.png
     - assets/book3.png
+    - assets/fiksi_remaja.jpg
+    - assets/horor.jpg
+    - assets/fantasi.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

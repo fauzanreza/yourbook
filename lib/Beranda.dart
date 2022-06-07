@@ -24,6 +24,7 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         child: BottomNavigationBar(

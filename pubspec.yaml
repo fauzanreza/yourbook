@@ -37,7 +37,10 @@ dependencies:
   tab_indicator_styler: ^2.0.0
   sqflite: ^2.0.0+3
   path: ^1.8.0
+  form_validation: ^2.1.0+2
+  form_floating_action_button: ^2.0.0+6
   google_maps_flutter: ^2.1.6
+  
 
 dev_dependencies:
   flutter_test:

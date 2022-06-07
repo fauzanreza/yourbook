@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourbook/Auth/LoginPage.dart';
 
 class Profil extends StatefulWidget {
   const Profil({Key? key}) : super(key: key);
@@ -208,7 +209,38 @@ class _ProfilState extends State<Profil> {
                             style: TextStyle(
                                 fontSize: 16.0,
                                 decoration: TextDecoration.underline)),
-                      )))
+                      ))),
+                  Container(
+                    margin: const EdgeInsets.only(top: 5),
+                    child: Row(
+                      children: <Widget>[
+                        const Text('have another account ?'),
+                        TextButton(
+                          child: const Text(
+                            'Sign In',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          onPressed: () {
+                            // Navigator.pushReplacement(
+                            //     context,
+                            //     new MaterialPageRoute(
+                            //         builder: (BuildContext context) =>
+                            //             new LoginPage()));
+                            Navigator.of(context, rootNavigator: true)
+                                .pushReplacement(
+                              MaterialPageRoute(
+                                builder: (_) => LoginPage(),
+                              ),
+                            );
+                          },
+                        )
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ),
+                  ),
                 ]))));
   }
 }

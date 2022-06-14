@@ -58,7 +58,7 @@ class _ChatState extends State<Chat> {
                                             children: [
                                               TextSpan(
                                                   text:
-                                                      "Terima kasih kak atas penyewaannya ?",
+                                                      "Terima kasih kak atas penyewaannya",
                                                   style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 20)),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:form_floating_action_button/form_floating_action_button.dart';
 import 'package:form_validation/form_validation.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:yourbook/Auth/LoginPage.dart';
+
+import '../main.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -11,6 +15,17 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final userController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    userController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
   bool _loading = false;
 
   void _onSubmit() async {
@@ -25,6 +40,23 @@ class _SignupPageState extends State<SignupPage> {
         );
       });
     }
+  }
+
+  Future signOut() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(child: CircularProgressIndicator()),
+    );
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: userController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
   @override
@@ -103,6 +135,9 @@ class _SignupPageState extends State<SignupPage> {
                       padding: EdgeInsets.only(right: 275, bottom: 5),
                     ),
                     TextFormField(
+                      controller: userController,
+                      cursorColor: Colors.white,
+                      textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -173,6 +208,10 @@ class _SignupPageState extends State<SignupPage> {
                       padding: EdgeInsets.only(right: 240, bottom: 5),
                     ),
                     TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      cursorColor: Colors.white,
+                      textInputAction: TextInputAction.done,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -205,16 +244,29 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ),
                     ),
-                    Container(
-                      child: FormFloatingActionButton(
-                        loading: _loading,
-                        onSubmit: _onSubmit,
-                        onValidate: () async {
-                          var error = Form.of(context)?.validate();
-                          return error ?? false;
-                        },
-                      ),
-                    ),
+                    ElevatedButton(
+                        onPressed: signOut,
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Color.fromRGBO(0, 14, 209, 1.0)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            ))),
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(fontSize: 22),
+                        )),
+                    // Container(
+                    //   child: FormFloatingActionButton(
+                    //     loading: _loading,
+                    //     onSubmit: _onSubmit,
+                    //     onValidate: () async {
+                    //       var error = Form.of(context)?.validate();
+                    //       return error ?? false;
+                    //     },
+                    //   ),
+                    // ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: Row(
@@ -230,7 +282,7 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             onPressed: () {
                               //signup screen
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const LoginPage()),

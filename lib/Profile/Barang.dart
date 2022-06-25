@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yourbook/Feature/detail.dart';
 
 class Barang extends StatefulWidget {
   const Barang({Key? key}) : super(key: key);
@@ -27,13 +26,7 @@ class _BarangState extends State<Barang> {
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
                           InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const detail()),
-                              );
-                            },
+                            onTap: () {},
                             child: Ink.image(
                               image: AssetImage("assets/book3.png"),
                               height: 180,
@@ -66,13 +59,7 @@ class _BarangState extends State<Barang> {
                         clipBehavior: Clip.antiAlias,
                         child: Column(children: [
                           InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const detail()),
-                              );
-                            },
+                            onTap: () {},
                             child: Ink.image(
                               image: AssetImage("assets/book2.png"),
                               height: 180,

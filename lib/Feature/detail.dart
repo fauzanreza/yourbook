@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yourbook/Feature/formsewa.dart';
 
 class detail extends StatelessWidget {
   const detail({Key? key}) : super(key: key);
@@ -90,7 +91,13 @@ class detail extends StatelessWidget {
           ),
           Container(
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => formsewa(location: "")),
+                );
+              },
               child: const Text("Sewa Rp 20.000,-"),
               color: Colors.blueAccent,
               padding: const EdgeInsets.only(left: 20, right: 20),

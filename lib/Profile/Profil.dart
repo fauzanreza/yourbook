@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yourbook/Auth/LoginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profil extends StatefulWidget {
   const Profil({Key? key}) : super(key: key);
@@ -11,6 +11,7 @@ class Profil extends StatefulWidget {
 class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
         body: new Container(
             color: Colors.white,
@@ -23,224 +24,218 @@ class _ProfilState extends State<Profil> {
                     child: new Text(
                       'Profil Saya',
                       style: TextStyle(
-                          fontSize: 25.0, fontWeight: FontWeight.bold),
+                          color: Color.fromARGB(255, 17, 92, 154),
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
+                  Divider(height: 20, thickness: 1),
                   Padding(
                       padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              new Text(
-                                'Username',
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Flexible(
-                            child: new TextField(
-                              decoration: const InputDecoration(
-                                  labelText: "Faalia_aurelia01"),
+                          EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                      child: new Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            new Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Container(
+                                  child: Text(
+                                    'Username',
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(child: Text("Faalia_aurelia01")),
+                              ],
                             ),
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              new Text(
-                                'Nama',
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Flexible(
-                            child: new TextField(
-                              decoration: const InputDecoration(
-                                  labelText: "Faalia Aurelia"),
-                            ),
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              new Text(
-                                'No Hp',
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Flexible(
-                            child: new TextField(
-                              decoration: const InputDecoration(
-                                  labelText: "08786541322"),
-                            ),
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              new Text(
-                                'Password',
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Flexible(
-                            child: new TextField(
-                              decoration:
-                                  const InputDecoration(labelText: "*******"),
-                            ),
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              new Text(
-                                'Email',
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: new Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          new Flexible(
-                            child: new TextField(
-                              decoration: const InputDecoration(
-                                  labelText: "faliaaurelia09@gmail.com"),
-                            ),
-                          ),
-                        ],
-                      )),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
-                      child: Center(
-                          child: TextButton(
-                        style: TextButton.styleFrom(
-                          primary: Colors.blue,
-                        ),
-                        onPressed: () {},
-                        child: Text('edit akun',
-                            style: TextStyle(
-                                fontSize: 16.0,
-                                decoration: TextDecoration.underline)),
-                      ))),
-                  Container(
-                    margin: const EdgeInsets.only(top: 5),
-                    child: Row(
-                      children: <Widget>[
-                        const Text('have another account ?'),
-                        TextButton(
-                          child: const Text(
-                            'Sign In',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.blue,
-                            ),
-                          ),
-                          onPressed: () {
-                            // Navigator.pushReplacement(
-                            //     context,
-                            //     new MaterialPageRoute(
-                            //         builder: (BuildContext context) =>
-                            //             new LoginPage()));
-                            Navigator.of(context, rootNavigator: true)
-                                .pushReplacement(
-                              MaterialPageRoute(
-                                builder: (_) => LoginPage(),
-                              ),
-                            );
-                          },
-                        )
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ),
-                  ),
+                            Divider(height: 20, thickness: 0.1),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 0),
+                              child: new Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    new Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        new Container(
+                                          child: Text(
+                                            'Name',
+                                            textAlign: TextAlign.justify,
+                                            style: TextStyle(
+                                                fontSize: 16.0,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Container(
+                                            child: Text("Faalia Aurelia")),
+                                      ],
+                                    ),
+                                    Divider(height: 20, thickness: 0.1),
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 5, horizontal: 0),
+                                        child: new Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: <Widget>[
+                                              new Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: <Widget>[
+                                                  Container(
+                                                    child: Text(
+                                                      'No.Hp',
+                                                      style: TextStyle(
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                      child:
+                                                          Text("08786541322")),
+                                                ],
+                                              ),
+                                              Divider(
+                                                  height: 20, thickness: 0.1),
+                                              Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                      vertical: 5,
+                                                      horizontal: 0),
+                                                  child: new Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: <Widget>[
+                                                        new Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: <Widget>[
+                                                            Container(
+                                                              child: Text(
+                                                                'Email',
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                            ),
+                                                            Container(
+                                                              child: Text(
+                                                                user.email!,
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        16),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Divider(
+                                                            height: 20,
+                                                            thickness: 0.1),
+                                                        Padding(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    vertical: 5,
+                                                                    horizontal:
+                                                                        0),
+                                                            child: new Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: <
+                                                                    Widget>[
+                                                                  new Row(
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: <
+                                                                        Widget>[
+                                                                      Container(
+                                                                        child:
+                                                                            Text(
+                                                                          'Password',
+                                                                          textAlign:
+                                                                              TextAlign.right,
+                                                                          style: TextStyle(
+                                                                              fontSize: 16.0,
+                                                                              fontWeight: FontWeight.bold),
+                                                                        ),
+                                                                      ),
+                                                                      Container(
+                                                                          child:
+                                                                              Text("*********")),
+                                                                    ],
+                                                                  ),
+                                                                  Divider(
+                                                                      height:
+                                                                          20,
+                                                                      thickness:
+                                                                          0.1),
+                                                                  Padding(
+                                                                      padding: EdgeInsets.only(
+                                                                          left:
+                                                                              25.0,
+                                                                          right:
+                                                                              25.0,
+                                                                          top:
+                                                                              2.0),
+                                                                      child: Center(
+                                                                          child: TextButton(
+                                                                        style: TextButton
+                                                                            .styleFrom(
+                                                                          primary:
+                                                                              Colors.blue,
+                                                                        ),
+                                                                        onPressed:
+                                                                            () {},
+                                                                        child: Text(
+                                                                            'edit akun',
+                                                                            style:
+                                                                                TextStyle(fontSize: 16.0, decoration: TextDecoration.underline)),
+                                                                      ))),
+                                                                  Container(
+                                                                    margin: const EdgeInsets
+                                                                            .only(
+                                                                        top: 5),
+                                                                    child: Row(
+                                                                      children: <
+                                                                          Widget>[
+                                                                        const Text(
+                                                                            'have another account ?'),
+                                                                        TextButton(
+                                                                          child:
+                                                                              const Text(
+                                                                            'Sign In',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              fontSize: 16,
+                                                                              color: Colors.blue,
+                                                                            ),
+                                                                          ),
+                                                                          onPressed: () => FirebaseAuth
+                                                                              .instance
+                                                                              .signOut(),
+                                                                        )
+                                                                      ],
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                    ),
+                                                                  ),
+                                                                ]))
+                                                      ]))
+                                            ]))
+                                  ]),
+                            )
+                          ]))
                 ]))));
   }
 }

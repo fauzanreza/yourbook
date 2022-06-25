@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:yourbook/Auth/SignUpPage.dart';
-import 'package:yourbook/Beranda.dart';
-import 'package:form_validation/form_validation.dart';
 import 'package:form_floating_action_button/form_floating_action_button.dart';
+import 'package:form_validation/form_validation.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:yourbook/Auth/SignUpPage.dart';
+
+import '../main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,6 +16,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final userController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    userController.dispose();
+    passwordController.dispose();
+
+    super.dispose();
+  }
+
   bool _loading = false;
 
   void _onSubmit() async {
@@ -20,12 +35,28 @@ class _LoginPageState extends State<LoginPage> {
     _loading = false;
     if (mounted == true) {
       setState(() {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const Beranda()),
-        );
+        onPressed() {
+          signIn();
+        }
       });
     }
+  }
+
+  Future signIn() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(child: CircularProgressIndicator()),
+    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: userController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
   @override
@@ -63,15 +94,18 @@ class _LoginPageState extends State<LoginPage> {
                         )),
                     Container(
                       child: Text(
-                        "Username",
+                        "Email",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
                             fontSize: 18),
                       ),
-                      padding: EdgeInsets.only(right: 240, bottom: 5),
+                      padding: EdgeInsets.only(right: 275, bottom: 5),
                     ),
                     TextFormField(
+                      controller: userController,
+                      cursorColor: Colors.white,
+                      textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -104,6 +138,10 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.only(right: 240, bottom: 5),
                     ),
                     TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      cursorColor: Colors.white,
+                      textInputAction: TextInputAction.done,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -136,16 +174,33 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    Container(
-                      child: FormFloatingActionButton(
-                        loading: _loading,
-                        onSubmit: _onSubmit,
-                        onValidate: () async {
-                          var error = Form.of(context)?.validate();
-                          return error ?? false;
-                        },
-                      ),
-                    ),
+                    ElevatedButton(
+                        onPressed: signIn,
+                        // icon: Icon(
+                        //   Icons.lock_open,
+                        //   size: 24,
+                        // ),
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Color.fromRGBO(0, 14, 209, 1.0)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            ))),
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(fontSize: 22),
+                        )),
+                    // Container(
+                    //   child: FormFloatingActionButton(
+                    //     loading: _loading,
+                    //     onSubmit: _onSubmit,
+                    //     onValidate: () async {
+                    //       var error = Form.of(context)?.validate();
+                    //       return error ?? false;
+                    //     },
+                    //   ),
+                    // ),
                     Container(
                       margin: const EdgeInsets.only(top: 170, bottom: 20),
                       child: Row(

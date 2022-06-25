@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'package:yourbook/Profile/Barang.dart';
 import 'package:yourbook/Profile/Profil.dart';
 import 'package:yourbook/Profile/Setting.dart';
@@ -50,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Text('Falia Aufa',
+                              new Text('Falia Aurellia',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20.0,

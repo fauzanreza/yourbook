@@ -16,7 +16,7 @@ class _SearchPage extends State<SearchPage> {
     return Scaffold(
         body: ListView(children: <Widget>[
       Container(
-        margin: EdgeInsets.only(left: 4, right: 5),
+        margin: EdgeInsets.only(left: 2, right: 3),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -25,7 +25,7 @@ class _SearchPage extends State<SearchPage> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => SimpleMap()));
                   },
-                  label: Text("search judul/penerbit/pengarang...",
+                  label: Text("search judul/penerbit/pengara...",
                       style:
                           TextStyle(color: Color.fromARGB(255, 182, 182, 182))),
                   icon: Icon(
@@ -76,7 +76,7 @@ class _SearchPage extends State<SearchPage> {
             ]),
       ),
       Container(
-        margin: EdgeInsets.only(top: 20, left: 15),
+        margin: EdgeInsets.only(top: 20, left: 5),
         child: Column(
           children: [
             Container(
@@ -218,7 +218,7 @@ class _SearchPage extends State<SearchPage> {
                 ])),
               ]))),
       Container(
-        margin: EdgeInsets.only(top: 20, left: 15),
+        margin: EdgeInsets.only(top: 20, left: 5),
         child: Column(
           children: [
             Container(
@@ -233,20 +233,20 @@ class _SearchPage extends State<SearchPage> {
       Container(
         child: Column(children: [
           Container(
-              margin: EdgeInsets.only(top: 10, left: 15, right: 15),
+              margin: EdgeInsets.only(top: 10, left: 5, right: 5),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     ElevatedButton(onPressed: () {}, child: Text("Romance")),
                     ElevatedButton(onPressed: () {}, child: Text("Horor")),
-                    ElevatedButton(
-                        onPressed: () {}, child: Text("Fiksi Remaja")),
                     ElevatedButton(onPressed: () {}, child: Text("Fantasi")),
+                    ElevatedButton(
+                        onPressed: () {}, child: Text("FiksiRemaja")),
                   ]))
         ]),
       ),
       Container(
-        margin: EdgeInsets.only(top: 20, left: 15),
+        margin: EdgeInsets.only(top: 20, left: 5),
         child: Column(
           children: [
             Container(

@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.w600,
                             fontSize: 18),
                       ),
-                      padding: EdgeInsets.only(right: 275, bottom: 5),
+                      padding: EdgeInsets.only(right: 235, bottom: 5),
                     ),
                     TextFormField(
                       controller: userController,
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.w600,
                             fontSize: 18),
                       ),
-                      padding: EdgeInsets.only(right: 240, bottom: 5),
+                      padding: EdgeInsets.only(right: 200, bottom: 5),
                     ),
                     TextFormField(
                       controller: passwordController,

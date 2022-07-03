@@ -17,9 +17,10 @@ class detail extends StatelessWidget {
                     SafeArea(
                         top: true,
                         child: MaterialButton(
-                          padding: EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: 5),
                           child: Icon(
                             Icons.arrow_back_ios,
+                            size: 24,
                             color: Colors.black,
                           ),
                           onPressed: () {
@@ -29,19 +30,19 @@ class detail extends StatelessWidget {
                     SafeArea(
                         top: true,
                         child: Container(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.only(top: 12),
                           child: Text(
                             'Detail buku',
-                            style: TextStyle(fontSize: 24, color: Colors.black),
+                            style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         )),
                     SafeArea(
                         top: true,
                         child: MaterialButton(
-                          padding: EdgeInsets.only(left: 70),
+                          padding: EdgeInsets.only(left: 15),
                           child: Icon(
                             Icons.bookmark_add_outlined,
-                            size: 26,
+                            size: 24,
                             color: Colors.black,
                           ),
                           onPressed: () {},
@@ -49,10 +50,10 @@ class detail extends StatelessWidget {
                     SafeArea(
                         top: true,
                         child: MaterialButton(
-                          padding: EdgeInsets.only(right: 20),
+                          padding: EdgeInsets.only(right: 60),
                           child: Icon(
                             Icons.more_vert,
-                            size: 26,
+                            size: 24,
                             color: Colors.black,
                           ),
                           onPressed: () {},
@@ -177,8 +178,7 @@ class detail extends StatelessWidget {
       {
         'Nama': 'Keeva Hendricks',
         'Profile': Colors.deepPurple,
-        'Comment':
-            'Hujan. Tentang Persahabatan. Tentang Cinta. Tentang Melupakan. Tentang Perpisahan. Tentang Hujan',
+        'Comment': 'Hujan.Tentang Persahabatan.Tentang Cinta.Tentang Melupakan',
       },
       {
         'Nama': 'Zeynep Draper',
